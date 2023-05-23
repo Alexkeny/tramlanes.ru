@@ -10,7 +10,7 @@
 					</thead>
 					<tbody>
 						{% for city in cities %}
-							<tr>
+							<tr {% if loop.index < 2 %} class="active"{% endif%}>
 								<td class='r'>{{ loop.index }}</td>
 								<td><a href='#' data-extent='[[{{ city.minx }}, {{city.miny}}], [{{ city.maxx }}, {{ city.maxy }}]]'  class='js-go-to-city' title='Нажмите чтобы увидеть на карте'>{{ city.short_name }}</a></td>
 								<td class='r'>{% if city.dedicated_share*100 > 80 %}<b>{% endif %}{{ (city.dedicated_share*100)|round(1) }}%{% if city.dedicated_share*100 > 80 %}</b>{% endif %}</td>

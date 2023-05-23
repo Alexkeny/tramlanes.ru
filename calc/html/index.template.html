@@ -622,7 +622,7 @@
 			#desktop-table td:last-child { padding-right: .7em; }
 			#desktop-table td:first-child { padding-left: .7em; }
 			#desktop-table table thead { background: #ddd; }
-			/* table tr:nth-child(even) { background: #eee; } */
+			table tr:nth-child(second) { background: #eee; }
 
 			.margin1-t { margin-top: 1em; }
 		}
@@ -728,7 +728,9 @@
 		container: 'map',
 		{# style: 'mapbox://styles/mapbox/streets-v10', #}
 		style: 'mapbox://styles/culebron/cj7ornxjab8oq2spdw84gxob0',
-		bounds: [[26, 42], [86, 61]]
+		//bounds: [[26, 42], [86, 61]]
+		zoom: 12,
+		center: [39.8571, 57.6296]
 	});
 
 	map.on('load', function() {

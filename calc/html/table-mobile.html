@@ -1,6 +1,6 @@
 				<table class='expand js-table {{ extra_class }}'>
 					{% for city in cities %}
-						<tr>
+						<tr {% if loop.index < 2 %} class="active"{% endif%}>
 							<td class='r'>{{ loop.index }}</td>
 							<td class='font-larger'><a href='#' data-extent='[[{{ city.minx }}, {{city.miny}}], [{{ city.maxx }}, {{ city.maxy }}]]' class='js-go-to-city'>{{ city.short_name }}</a></td>
 							<td class='font-larger r'>{% if city.dedicated_share*100>80 %}<b>{% endif %}{{ (city.dedicated_share*100)|round(1) }}%{% if city.dedicated_share*100>80 %}</b>{% endif %}</td>
